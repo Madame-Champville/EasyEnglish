@@ -1,0 +1,29 @@
+<br>
+<h1 align="center">Регистрация преподавателя</h1>
+<br>
+<div>
+<form method="POST">
+    {% csrf_token %}
+    <div> Имя:
+        {{ form.first_name }}
+    </div>
+<br>
+    <div> Фамилия:
+        {{ form.last_name }}
+    </div>
+<br>
+    <div> Номер телефона:
+        {{ form.phone }}
+    </div>
+<br>
+    <div> Электронная почта:
+        {{ form.email }}
+    </div>
+<br>
+    <div> Курс:
+        {{ form.course }}
+    </div>
+<br>
+  <button type="submit" class="btn btn-primary">Отправить</button>
+</form>
+</div>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easy English</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!-- Navigaton -->
+    <nav>
+        <img src="{% static 'images/The_best_logo.png' %}" alt="">
+        <div class="navigation">
+            <ul>
+                <i id="menu-close" class="fas fa-times"></i>
+                <li><a href="{% url 'student_list' %}">Главная</a></li>
+                <li><a href="{% url 'about_list' %}">О нас</a></li>
+                <li><a href="{% url 'blogs_list' %}">Блог</a></li>
+                <li><a class="active" href="{% url 'courses_list' %}">Курсы</a></li>
+                <li><a href="{% url 'contact_list' %}">Контакты</a></li>
+                <li><a href="#" id="open_pup_up">Регистрация</a></li>
+            </ul>
+            <img id="menu-btn" src="{% static 'images/menu.png' %}" alt="">
+        </div>
+    </nav>
+
+    <div class="pop_up" id="pop_up">
+    <div class="pop_up_container">
+        <div class="pop_up_body" id="pop_up_body">
+            <div class="container">
+                <div class="forms">
+                    <div class="form login">
+                        <span class="title">Login</span>
+
+                        <form action="#">
+                            <div class="input-field">
+                                <input type="text" placeholder="Enter your emalil" required>
+                                <i class="fas fa-envelope icon"></i>
+                            </div>
+
+                            <div class="input-field">
+                                <input type="password" class="password" placeholder="Enter your password" required>
+                                <i class="fas fa-lock icon"></i>
+                                <i class="fas fa-eye-slash showHidePw"></i>
+                            </div>
+
+                            <div class="checkbox-text">
+                                <div class="checkbox-content">
+                                    <input type="checkbox" id="logCheck">
+                                    <label for="logCheck" class="text">Remember me</label>
+                                </div>
+
+                                <a href="#" class="text"> Forgot password?</a>
+                            </div>
+
+                            <div class="input-field button">
+                                <input type="button" value="Login Now">
+                            </div>
+
+                        </form>
+
+                        <div class="login-signup">
+                    <span class="text"> Not a member ?
+                        <a href="#" class="text signup-link"> Sign up now</a>
+                    </span>
+                        </div>
+                    </div>
+
+                    <!-- Registration form -->
+
+                    <div class="form signup">
+                        <span class="title">Registration</span>
+
+                        <form action="#">
+
+                            <div class="input-field">
+                                <input type="text" placeholder="Enter your name" required>
+                                <i class="fas fa-user"></i>
+                            </div>
+
+                            <div class="input-field">
+                                <input type="text" placeholder="Enter your emalil" required>
+                                <i class="fas fa-envelope icon"></i>
+                            </div>
+
+                            <div class="input-field">
+                                <input type="password" class="password" placeholder="Create a password" required>
+                                <i class="fas fa-lock icon"></i>
+                            </div>
+
+                            <div class="input-field">
+                                <input type="password" class="password" placeholder="Confirm the password" required>
+                                <i class="fas fa-lock icon"></i>
+                                <i class="fas fa-eye-slash showHidePw"></i>
+                            </div>
+
+                            <div class="checkbox-text">
+                                <div class="checkbox-content">
+                                    <input type="checkbox" id="logCheck1">
+                                    <label for="logCheck" class="text">Remember me</label>
+                                </div>
+
+                                <a href="#" class="text"> Forgot password?</a>
+                            </div>
+
+                            <div class="input-field button">
+                                <input type="button" value="Login Now">
+                            </div>
+
+                        </form>
+
+                        <div class="login-signup">
+                    <span class="text"> Not a member ?
+                        <a href="#" class="text login-link"> Sign up now</a>
+                    </span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="pop_up_close" id="pop_up_close">&#10006</div>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Home -->
+
+    <section id="course_inner-home">
+        <h2>Запишитесь на наши популярные курсы и повышайте свой уровень</h2>
+    </section>
+
+    <section id="course-inner">
+        <div class="overview">
+            <img class="course-img" src="{% static 'images/english lvls/general.jpeg' %}">
+            <div class="course-head">
+                <div class="c-name">
+                    <h2>Общий английский</h2>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>общий английский подходит для всех, вне зависимости от вашего уровня</p>
+                </div>
+                <span>500 сомов</span>
+            </div>
+            <h3>Преподаватель</h3>
+            <div class="tutor">
+                <img src="{% static 'images/Not using/juels.jpg' %}">
+                <div class="tutor-det">
+                    <h5>Джулс Уиннфилд</h5>
+                    <p>Учитель английского</p>
+                </div>
+            </div>
+            <hr>
+            <h3>Описание курса</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde facilis cumque recusandae. At repudiandae
+                cumque, quod totam consectetur esse dolore, dolorum, ea praesentium ad ut unde voluptatibus inventore
+                excepturi accusamus iste temporibus consequatur aliquid iure voluptate hic!<br><br> Voluptatem ad
+                molestias
+                fugiat minus maxime temporibus minima animi, eveniet magni atque debitis a enim cum harum dolorum id.
+                Officiis, dolor aliquam quos harum ratione illo dignissimos provident doloribus saepe laboriosam
+                ducimus. Ex nam beatae dolore repellat quos voluptatibus dolor maiores perspiciatis odit nostrum impedit
+                cupiditate officia expedita quod repudiandae consectetur veniam temporibus veritatis, dolorem, in natus
+                aspernatur dignissimos nisi?<br><br> Laboriosam asperiores quaerat error nam, eius ipsum consequatur et
+                aliquid
+                repellendus doloribus ullam maxime blanditiis praesentium ut hic sit magnam minima assumenda odit
+                temporibus voluptate delectus fugit, eum sint. Ipsam voluptatem dolorem quam in! Veritatis reiciendis
+                accusantium ea explicabo esse quidem, eveniet aliquid temporibus perferendis blanditiis eligendi iste
+                tempora molestiae saepe voluptate nostrum? Expedita recusandae esse, tempora excepturi enim incidunt ex
+                beatae illo.</p>
+            <hr>
+            <h3>Что вы выучите</h3>
+            <div class="learn">
+                <p> <i class="far fa-check-circle"></i>A1 - Begginer</p>
+                <p> <i class="far fa-check-circle"></i>A2 - Pre-Intermediate</p>
+                <p> <i class="far fa-check-circle"></i>B1 - Intermediate</p>
+                <p> <i class="far fa-check-circle"></i>B2 - Upper-Intermediate</p>
+                <p> <i class="far fa-check-circle"></i>C1 - Advanced</p>
+                <p> <i class="far fa-check-circle"></i>C2 - Proficiency</p>
+            </div>
+        </div>
+
+        <div class="enroll">
+            <h3>Этот курс включает:</h3>
+            <p> <i class="far fa-file-video"></i>52 видео</p>
+            <p> <i class="far fa-newspaper"></i>75 статей</p>
+            <p> <i class="fas fa-download"></i>Скачиваемые ресурсы</p>
+            <p> <i class="fas fa-infinity"></i>Безграничный доступ</p>
+            <p> <i class="fas fa-mobile-alt"></i>Доступность на мобильных устройствах и телевизорах</p>
+            <p> <i class="fas fa-paperclip"></i>Задание</p>
+            <p> <i class="fas fa-trophy"></i>Сертификат об окончании</p>
+            <div class="enroll-btn">
+                <a class="blue" href="#">Записаться на курс</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+
+    <footer>
+
+        <div class="footer-col">
+            <h3>Top Products</h3>
+            <li>Manage Reputation</li>
+            <li>Power Tools</li>
+            <li>Managed Website</li>
+            <li>Marketing Service</li>
+        </div>
+
+        <div class="footer-col">
+            <h3>Quick Links</h3>
+            <li>Jobs</li>
+            <li>Brand Assets</li>
+            <li>Investor Relations</li>
+            <li>Teams of Service</li>
+        </div>
+
+        <div class="footer-col">
+            <h3>Features</h3>
+            <li>Manage Reputation</li>
+            <li>Power Tools</li>
+            <li>Managed Website</li>
+            <li>Marketing Service</li>
+        </div>
+
+        <div class="Resources">
+            <h3>Resources</h3>
+            <li>Guides</li>
+            <li>Research</li>
+            <li>Experts</li>
+            <li>Marketing Service</li>
+        </div>
+
+        <div class="footer-col">
+            <h3>Newsletter</h3>
+            <p>You can trust us, we only send promo offers</p>
+            <div class="subscribe">
+                <input type="text" placeholder="Your Email addres">
+                <a href="#" class="yellow">SUBSCRIBE</a>
+            </div>
+        </div>
+
+
+        <div class="copyright">
+            <p>Copyright 2023 All rights reserved | This tamplate is made by Adilet</p>
+            <div class="pro-links">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-linkedin-in"></i>
+                <i class="fab fa-telegram"></i>
+            </div>
+        </div>
+
+    </footer>
+    <script src="{% static 'js/pop_up.js' %}"></script>
+    <script src="{% static 'js/registration.js' %}"></script>
+
+    <script>
+        $('#menu-btn').click(function () {
+            $('nav .navigation ul').addClass('active')
+        });
+        $('#menu-close').click(function () {
+            $('nav .navigation ul').removeClass('active')
+        });
+    </script>
+
+</body>
+
+</html>
